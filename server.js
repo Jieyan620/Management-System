@@ -199,13 +199,14 @@ function byDepartment() {
             (err, emploryees) => {
               if (err) { console.log(err) }
               console.log(emploryees)
+              start()
             }
           )
           
         }
       )
     })
-start()
+
 }
 
 function byRole() {
@@ -226,18 +227,20 @@ function byRole() {
    (err, emploryees) => {
     if (err) { console.log(err) }
     console.log(emploryees)
+     start()
     }
     )
   })
-start()
+
 }
 
 function Allemployees() {
   db.query('SELECT * FROM emploryees', (err,emploryees) => {
     if (err) {console.log(err)}
     console.log(emploryees)
+    start()
 })
-  start()
+ 
 }
 
 function deleteFunction() {
@@ -283,11 +286,9 @@ function deleteDepartment(){
   db.query('DELETE FROM department WHERE ?', { departmentid: answer.deletedepartment }, err => {
     if (err) throw err;
     console.log('department was deleted successfully!');
-    
+    start()
   })
-})
- start()
-    
+}) 
 }
 
 function deleteRole(){
@@ -306,11 +307,9 @@ function deleteRole(){
       db.query('DELETE FROM employeerole WHERE ?', { roleid:answer.deleterole }, err => {
         if (err) throw err;
         console.log('role was deleted successfully!');
-
+        start()
       })
-    })
-      start()
-    
+    }) 
 }
 
 function deleteEmployee(){
@@ -329,9 +328,9 @@ function deleteEmployee(){
       db.query('DELETE FROM employees WHERE ?', { employeeid: answer.deleteemployee }, err => {
         if (err) throw err;
         console.log('employee was deleted successfully!');
+        start()
       })
     })
-      start()
 }
 
 
