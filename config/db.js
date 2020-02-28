@@ -5,7 +5,7 @@ const connection = createConnection({
   port: 3306,
   user: 'root',
   password: 'Ya.414629926',
-  database: 'todo_db'
+  database: 'employee_db'
 })
 
 module.exports = connection
